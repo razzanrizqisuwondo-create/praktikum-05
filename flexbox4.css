@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 28px 20px;
+  background: #f4f4f4;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.example h1 {
+  min-width: 0;
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.layout {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 300px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.layout-a > nav {
+  flex: 0 0 22%;
+  padding: 14px;
+  background: pink;
+}
+
+.page-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.layout-a header,
+.layout-a footer,
+.layout-b > header,
+.layout-b > footer {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px;
+  background: khaki;
+}
+
+.content-row {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}
+
+.layout-a article {
+  flex: 1;
+  padding: 14px;
+}
+
+.layout-a aside {
+  flex: 0 0 22%;
+  padding: 14px;
+  background: aqua;
+}
+
+.layout-b {
+  flex-direction: column;
+  height: 320px;
+  padding: 10px;
+  gap: 8px;
+  background: lightpink;
+}
+
+.layout-b > header,
+.layout-b > footer {
+  min-height: 34px;
+  justify-content: center;
+  padding: 8px;
+  background: #87cfc5;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.layout-b aside {
+  flex: 0 0 30%;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  background: #5db7b2;
+  color: white;
+}
+
+.layout-b article {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding: 12px;
+  background: #f7797d;
+  color: white;
+}
+
+.layout-b article h2 {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.image-row {
+  display: flex;
+  gap: 8px;
+  height: calc(100% - 28px);
+}
+
+.image-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 560px) {
+  .layout {
+    height: 260px;
+  }
+
+  .layout-a > nav,
+  .layout-a aside {
+    flex-basis: 20%;
+    padding: 8px;
+  }
+
+  .layout-b aside {
+    flex-basis: 25%;
+    padding: 8px;
+  }
+
+  .layout-b article {
+    padding: 8px;
+  }
+
+  .image-row {
+    gap: 4px;
+  }
+}
